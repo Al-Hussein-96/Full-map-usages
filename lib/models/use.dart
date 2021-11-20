@@ -7,11 +7,14 @@ class UseModel {
   static List<String> usageNames = [
     'Standard Map',
   ];
+  static List<String> routeNames = [
+    'standard_map',
+  ];
 
   /// Get item by [id].
   ///
   /// In this sample, the catalog is infinite, looping over [usageNames].
-  Item getById(int id) => Item(id, usageNames[id % usageNames.length]);
+  Item getById(int id) => Item(id, usageNames[id % usageNames.length],routeNames[id % usageNames.length]);
 
   /// Get item by its position in the catalog.
   Item getByPosition(int position) {
@@ -25,10 +28,10 @@ class UseModel {
 class Item {
   final int id;
   final String name;
+  final String route_name;
   final Color color;
-  final int price = 42;
 
-  Item(this.id, this.name)
+  Item(this.id, this.name,this.route_name)
   // To make the sample app look nicer, each item is given one of the
   // Material Design primary colors.
       : color = Colors.primaries[id % Colors.primaries.length];

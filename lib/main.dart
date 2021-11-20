@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:full_map_uses/models/use.dart';
+import 'package:full_map_uses/screens/standard.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_webservice/places.dart';
 import 'package:provider/provider.dart';
@@ -51,7 +52,7 @@ class App extends StatelessWidget {
         initialRoute: '/',
         routes: {
           '/': (context) => const ListUses(),
-          // '/cart': (context) => const MyCart(),
+          '/standard_map': (context) => const StandardMapPage(title: "Standard Map"),
         },
       ),
     );
