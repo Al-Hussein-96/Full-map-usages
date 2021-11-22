@@ -88,11 +88,37 @@ class _StandardMapPageState extends State<StandardMapPage> {
           initialCameraPosition: _kGooglePlex,
           onMapCreated: (controller) => _mapController.complete(controller),
           myLocationEnabled: true,
+          myLocationButtonEnabled: false,
+          zoomControlsEnabled: false,
+
         ),
       ),
       appBar: AppBar(
         title: Text(widget.title),
       ),
+      floatingActionButtonLocation:FloatingActionButtonLocation.miniEndFloat,
+      floatingActionButton: FloatingActionButton(
+        onPressed: _currentLocation,
+
+        child: const Icon(Icons.my_location),),
     );
+  }
+  void _currentLocation() async {
+    final GoogleMapController controller = await _mapController.future;
+    LocationData? currentLocation;
+    var location = new Location();
+    try {
+      currentLocation = await location.getLocation();
+    } on Exception {
+      currentLocation = null;
+    }
+
+    controller.animateCamera(CameraUpdate.newCameraPosition(
+      CameraPosition(
+        bearing: 0,
+        target: LatLng(currentLocation!.latitude!, currentLocation!.longitude!),
+        zoom: 17.0,
+      ),
+    ));
   }
 }
