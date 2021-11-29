@@ -64,6 +64,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.15.0"
+  crypto:
+    dependency: transitive
+    description:
+      name: crypto
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.1"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -143,12 +150,12 @@ packages:
     source: hosted
     version: "0.0.20-nullsafety.5"
   http:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: http
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.13.3"
+    version: "0.13.4"
   http_parser:
     dependency: transitive
     description:
@@ -219,13 +226,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.8.0"
-  pedantic:
-    dependency: transitive
-    description:
-      name: pedantic
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "1.11.1"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -301,6 +301,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.3.0"
+  uuid:
+    dependency: "direct main"
+    description:
+      name: uuid
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "3.0.5"
   vector_math:
     dependency: transitive
     description:

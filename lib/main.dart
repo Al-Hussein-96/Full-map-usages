@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:full_map_uses/models/use.dart';
+import 'package:full_map_uses/screens/place_autocomplete.dart';
 import 'package:full_map_uses/screens/standard.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_maps_webservice/places.dart';
@@ -37,14 +38,7 @@ class App extends StatelessWidget {
     return MultiProvider(
       providers: [
         Provider(create: (context) => UseModel()),
-        // ChangeNotifierProxyProvider<UseModel, CartModel>(
-        //   create: (context) => CartModel(),
-        //   update: (context, catalog, cart) {
-        //     if (cart == null) throw ArgumentError.notNull('cart');
-        //     cart.catalog = catalog;
-        //     return cart;
-        //   },
-        // ),
+
       ],
       child: MaterialApp(
         title: 'Map Demo',
@@ -53,17 +47,10 @@ class App extends StatelessWidget {
         routes: {
           '/': (context) => const ListUses(),
           '/standard_map': (context) => const StandardMapPage(title: "Standard Map"),
+          '/place_autocomplete': (context) => const PlaceAutocompletePage(title: "Place Autocomplete"),
         },
       ),
     );
-    // return MaterialApp(
-    //   title: 'Full Map Uses',
-    //   home: const HomePage(title: 'Full Map Uses'),
-    //   theme: ThemeData(
-    //     primarySwatch: Colors.pink,
-    //     scaffoldBackgroundColor: Colors.pink[50],
-    //   ),
-    // );
   }
 }
 

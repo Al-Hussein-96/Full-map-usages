@@ -116,7 +116,7 @@ class _StandardMapPageState extends State<StandardMapPage> {
     controller.animateCamera(CameraUpdate.newCameraPosition(
       CameraPosition(
         bearing: 0,
-        target: LatLng(currentLocation!.latitude!, currentLocation!.longitude!),
+        target: LatLng(currentLocation!.latitude!, currentLocation.longitude!),
         zoom: 17.0,
       ),
     ));

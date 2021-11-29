@@ -6,9 +6,11 @@ import 'package:flutter/material.dart';
 class UseModel {
   static List<String> usageNames = [
     'Standard Map',
+    'Place Autocomplete'
   ];
   static List<String> routeNames = [
     'standard_map',
+    'place_autocomplete'
   ];
 
   /// Get item by [id].
